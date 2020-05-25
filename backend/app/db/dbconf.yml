@@ -1,0 +1,11 @@
+development:
+  driver: postgres
+  open: $DATABASE_URL
+
+staging:
+  driver: postgres
+  open: $DATABASE_URL
+
+production:
+  driver: postgres
+  open: $DATABASE_URL

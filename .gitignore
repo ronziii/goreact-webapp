@@ -1,0 +1,24 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+.vscode/
+.vscode-root/
+node_modules/
+node_modules*/
+public/
+*.sublime-*
+.env.development
+.env.development.bak
+.env.test
+.env.test.bak
+.idea/
+*.log
+super.iml
+.DS_Store
+*.swp
+main
+latest.dump
+yarn-error.log
+docker-compose.yml
+terraform/.terraform

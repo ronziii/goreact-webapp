@@ -1,0 +1,13 @@
+#!/bin/bash
+
+which kubectl > /dev/null
+
+if [[ $? -eq 0 ]]; then
+	echo "kubectl is already installed"
+else 
+	echo "Not installed!"
+fi
+
+
+
+	
