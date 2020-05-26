@@ -30,6 +30,10 @@ The Kubernetes cluster configuration in this context will pull images from publi
 
 The commands/actions to build or deploy the application as shown below should be executed from the root folder where the Makefile is.
 
+The builds are docker builds for the three different components: Frontend, Backend and Database(postgres). 
+
+Kubectl creates the deployments that enable the dockerized applications to run on the Minikube environment.
+
 *** Check Environment Setup ***
 ```shell
 $ make setup
