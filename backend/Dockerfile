@@ -13,5 +13,5 @@ RUN npm install --silent
 RUN npm install -g gulp-cli && npm install gulp@3.9.1
 COPY . .
 RUN wget https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh && chmod +x wait-for-it.sh
-ENTRYPOINT ./wait-for-it.sh postgres:5432 -- goose postgres "postgres://postgres:password@postgres:5432/ictlife_infra_interview_may_2020" status && gulp server
+ENTRYPOINT ./wait-for-it.sh postgres:5432 -- goose -dir app/db/migrations/ postgres "postgres://postgres_user:admin123@postgres:5432/ictlife_infra_interview_may_2020" up && gulp server
 

@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: goreact-postgres
-          image: goreact/postgresdb
-          imagePullPolicy: "IfNotPresent"
+          image: ronniewasabi/demo:database
+          imagePullPolicy: Always
           ports:
             - containerPort: 5432  
       volumes:

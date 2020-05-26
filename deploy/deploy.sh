@@ -3,6 +3,7 @@
 
 source util-func.sh
 
+
 if [[ ! $(which minikube) ]]; then
 	echo "Minikube is not installed!"
 fi
@@ -24,31 +25,31 @@ for i in "$@"
 do
 case $i in
     --build-frontend)
-	echo "Build frontend!"
+	build_frontend
     ;;
 
     --build-backend)
-    echo "Build backend!"
+    build_backend
     ;;
 
     --build-all)
-	echo "Build all!"
+	build_all
 	;;
 
 	--deploy-frontend)
-	echo "Build frontend!"
+	deploy_frontend
 	;;
 
     --deploy-backend)
-	echo "Deploy backend!"
+	deploy_backend
 	;;
 
 	--deploy-database)
-	echo "Deploy database!"
+	deploy_database
 	;;
 
 	--deploy-all)
-	echo "Deploy all!"
+	deploy_all
 	;;
 
 	--status)
@@ -63,7 +64,7 @@ case $i in
 
     *)
     # unknown option
-    echo "Unknown option $1"
+    echo_stderr "Unknown option $1"
     show_usage
     exit 1
     ;;

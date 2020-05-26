@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: goreact-backend
-  name: backend-app
+  name: goreact-backend
 spec:
   replicas: 1
   selector:
@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: goreact-backend
     spec:
       containers:
-      - image: goreact/database
+      - image: ronniewasabi/demo:backend
         name: goreact-backend
         imagePullPolicy: Never
         ports:

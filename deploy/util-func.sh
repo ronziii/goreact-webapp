@@ -16,7 +16,7 @@ build_backend() {
 build_database() {
 
 	cd ../database || exit
-	docker build -t goreact/postgresdb .
+	docker build -t goreact/database .
 }
 
 build_all() {
@@ -60,4 +60,20 @@ deploy_all() {
 
 check_status() {
 	kubectl get pods
+}
+
+
+show_usage() {
+
+  echo_stderr "Usage: [make setup]|[make deploy-frontend]|[make deploy-backend]|[make deploy-all]|[make build-frontend]\n \
+  			   [make build-backend]|[make build-database]|[make build-all]|[make status] "
+}
+
+
+# echo a message to standard error (used for messages not intended
+# to be parsed by scripts, such as usage messages, warnings or errors)
+echo_stderr() {
+
+  echo "$@" >&2
+  
 }
