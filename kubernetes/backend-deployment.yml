@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: goreact-backend
+  name: backend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: goreact-backend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: goreact-backend
+    spec:
+      containers:
+      - image: goreact/database
+        name: goreact-backend
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3001

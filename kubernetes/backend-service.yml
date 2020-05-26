@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: goreact-webapp
+  name: goreact-backend
   labels:
-    app: goreact-webapp
+    app: goreact-backend
 spec:
   type: NodePort
   ports:
@@ -12,4 +12,6 @@ spec:
     targetPort: 8080
     protocol: TCP
   selector:
-   app: goreact-webapp
+   app: goreact-backend
+
+
